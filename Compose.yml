@@ -15,7 +15,7 @@ services:
     restart: on-failure
     
   backend:
-    build: ./Backend
+    build: /Backend
     ports:
       - 8080:8080
     environment:
@@ -31,7 +31,7 @@ services:
     restart: on-failure
    
   frontend:
-    build: ./Frontend/app
+    build: /Frontend/app
     ports:
       - 80:80
     depends_on:
