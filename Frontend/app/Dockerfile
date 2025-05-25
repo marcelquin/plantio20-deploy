@@ -19,8 +19,6 @@ RUN npm run build
 # Instala um servidor estático simples
 RUN npm install -g serve
 
-# Expõe a porta 80
 EXPOSE 3000
 
-# Inicia o servidor
 CMD ["serve", "-s", "build", "-l", "3000"]

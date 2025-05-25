@@ -19,8 +19,7 @@ services:
     restart: on-failure
    
   frontend:
-    build: /Frontend/app
-    file: /frontend/app
+    build: ./Frontend/app
     ports:
       - 3000:3000
     depends_on:
