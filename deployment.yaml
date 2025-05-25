@@ -48,7 +48,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: plantio20-backend:latest
+        image: mquinteiro464/plantio20-backend:latest
         ports:
         - containerPort: 8080
         env:
@@ -83,7 +83,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: plantio20-frontend:latest
+        image: mquinteiro464/plantio20-frontend:latest
         ports:
         - containerPort: 80
 ---
@@ -104,22 +104,24 @@ metadata:
   name: backend-service
 spec:
   selector:
+    type: LoadBalancer
     app: backend
   ports:
-  - port: 8080
-    targetPort: 8080
+    - port: 8080
+      targetPort: 8080
+  
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: frontend-service
 spec:
-  type: LoadBalancer
   selector:
+    type: LoadBalancer 
     app: frontend
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

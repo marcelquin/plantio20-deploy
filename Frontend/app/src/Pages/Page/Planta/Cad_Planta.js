@@ -4,8 +4,8 @@ import { data, useNavigate } from 'react-router-dom';
 
 function Cad_Planta() {
 
-  const UrlPost = "http://localhost:8080/planta/NovaPlanta"
-  const UrlGetList = "http://localhost:8080/localizacao/ListarLocalizacoesDisponiveis"
+  const UrlPost = "http://192.168.0.24:8080/planta/NovaPlanta"
+  const UrlGetList = "http://192.168.0.24:8080/localizacao/ListarLocalizacoesDisponiveis"
   const navigate = useNavigate();
 
   const getListaAreaAll = async () => {

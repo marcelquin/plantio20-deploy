@@ -3,49 +3,48 @@ import RelatorioPlanta from './RelatorioPlanta';
 import EditarInfo from './EditarInfo';
 import React, { useState, useEffect } from 'react';
 
-function GerenciarPlantaCrescimento() {
-  const UrlGetList = "http://localhost:8080/planta/ListarPlantasCrescimento"
-  const [listAll, setListAll] = useState([]);
-  const [pesquisaInput, setPesquisaInput] = useState('')
-  const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+const UrlGetList = "http://localhost:8080/planta/ListarPlantasCrescimento"
+const [listAll, setListAll] = useState([]);
+const [pesquisaInput, setPesquisaInput] = useState('')
+const [showModal, setShowModal] = useState(false);
+const [modalContent, setModalContent] = useState(null);
 
-  const handleOpenModal = (content) => {
-    setModalContent(content);
-    setShowModal(true);
-  };
+const handleOpenModal = (content) => {
+  setModalContent(content);
+  setShowModal(true);
+};
 
-  const response = pesquisaInput.length > 0 ?
-    listAll.filter(dados => dados.nomePopular.includes(pesquisaInput)) :
-    []
+const response = pesquisaInput.length > 0 ?
+  listAll.filter(dados => dados.nomePopular.includes(pesquisaInput)) :
+  []
 
-  const handleChange = (e) => {
-    setPesquisaInput(e.target.value);
+const handleChange = (e) => {
+  setPesquisaInput(e.target.value);
+}
+
+const getLista = async () => {
+  try {
+    const response = await fetch(UrlGetList);
+    const data = await response.json();
+    // Filtrar apenas plantas na fase de crescimento
+    const plantasCrescimento = data.filter(planta => planta.ciclo.ciclo === 'CRESCIMENTO');
+    setListAll(plantasCrescimento);
+  } catch (error) {
+    console.error('Erro ao buscar lista de plantas:', error);
   }
+};
 
-  const getLista = async () => {
-    try {
-      const response = await fetch(UrlGetList);
-      const data = await response.json();
-      // Filtrar apenas plantas na fase de crescimento
-      const plantasCrescimento = data.filter(planta => planta.ciclo.ciclo === 'CRESCIMENTO');
-      setListAll(plantasCrescimento);
-    } catch (error) {
-      console.error('Erro ao buscar lista de plantas:', error);
-    }
-  };
+useEffect(() => {
+  getLista();
+}, []);
 
-  useEffect(() => {
-    getLista();
-  }, []);
-
-  const [dataRequest, setDataRequest] = useState({
-    'idPlanta': '',
-    'nomecientifico': '',
-    'nomePopular': '',
-    'instrucoes': '',
-    'localizacao': '',
-    'ciclo': '',
+const [dataRequest, setDataRequest] = useState({
+  'idPlanta': '',
+  'nomecientifico': '',
+  'nomePopular': '',
+  'instrucoes': '',
+  'localizacao': '',
+  'ciclo': '',
 })
 
 const handleRowSelect = (data) => {

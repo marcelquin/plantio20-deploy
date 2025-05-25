@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Home() {
 
-  const UrlGetList = "http://localhost:8080/planta/ListarPlantas"
+  const UrlGetList = "http://192.168.0.24:8080/planta/ListarPlantas"
 
 
   const [listAll, setlistAll] = useState([]);
@@ -101,4 +101,4 @@ return (
   );
 }
 
-export default Home; 
+export default Home;

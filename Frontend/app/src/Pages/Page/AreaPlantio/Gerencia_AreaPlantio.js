@@ -17,7 +17,7 @@ function Gerencia_AreaPlantio() {
       setShowModal(true);
   };
 
-  const UrlGetList = "http://localhost:8080/area/ListarAreas"
+  const UrlGetList = "http://192.168.0.24:8080/area/ListarAreas"
   const [listAll, setlistAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
 

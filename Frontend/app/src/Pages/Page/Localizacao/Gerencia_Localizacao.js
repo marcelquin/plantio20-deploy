@@ -17,7 +17,7 @@ function Gerencia_Localizacao() {
       setShowModal(true);
   };
 
-  const UrlGetList = "http://localhost:8080/Localizacao/ListarSubareas"
+  const UrlGetList = "http://192.168.0.24:8080/Localizacao/ListarSubareas"
   const [lista, setLista] = useState([]);
 
   

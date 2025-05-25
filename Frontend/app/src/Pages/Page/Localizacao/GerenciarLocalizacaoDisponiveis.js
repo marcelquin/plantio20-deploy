@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function GerenciarLocalizacaoNaoDisponiveis(){
 
-    const UrlGetList = "http://localhost:8080/localizacao/ListarLocalizacoesDisponiveis"
+    const UrlGetList = "http://192.168.0.24:8080/localizacao/ListarLocalizacoesDisponiveis"
   const [lista, setLista] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
   const [showModal, setShowModal] = useState(false);

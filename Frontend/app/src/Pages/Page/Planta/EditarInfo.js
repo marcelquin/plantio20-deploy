@@ -4,10 +4,10 @@ import '../../CSS/BodyStyle.css'
 
 function EditarInfo({data}){
 
-    const UrlPutEdit = "http://localhost:8080/planta/EditarPlanta"
-    const UrlPutLocalizacao = "http://localhost:8080/planta/AlterarLocalizacao"
-    const UrlPutCilco = "http://localhost:8080/planta/AlterarCiclo"
-    const UrlGetList = "http://localhost:8080/localizacao/ListarLocalizacoesDisponiveis"
+    const UrlPutEdit = "http://192.168.0.24:8080/planta/EditarPlanta"
+    const UrlPutLocalizacao = "http://192.168.0.24:8080/planta/AlterarLocalizacao"
+    const UrlPutCilco = "http://192.168.0.24:8080/planta/AlterarCiclo"
+    const UrlGetList = "http://192.168.0.24:8080/localizacao/ListarLocalizacoesDisponiveis"
 
     const navigate = useNavigate();
 

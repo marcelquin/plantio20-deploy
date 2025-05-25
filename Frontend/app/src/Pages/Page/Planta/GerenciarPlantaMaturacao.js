@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 
 function GerenciarPlantaMaturacao(){
 
-  const UrlGetList = "http://localhost:8080/planta/ListarPlantasMaturacao"
+  const UrlGetList = "http://192.168.0.24:8080/planta/ListarPlantasMaturacao"
   const [listAll, setListAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
   const [showModal, setShowModal] = useState(false);
