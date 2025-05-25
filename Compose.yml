@@ -32,7 +32,7 @@ services:
    
   frontend:
     build: /Frontend/app
-    file: /frontend/app/Dockerfile
+    file: /frontend/app
     ports:
       - 3000:3000
     depends_on:
