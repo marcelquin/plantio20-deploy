@@ -20,7 +20,7 @@ RUN npm run build
 RUN npm install -g serve
 
 # Expõe a porta 80
-EXPOSE 80
+EXPOSE 3000
 
 # Inicia o servidor
 CMD ["serve", "-s", "build", "-l", "80"]
