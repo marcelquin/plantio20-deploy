@@ -4,10 +4,6 @@ import React, { useState, useEffect } from 'react';
 
 function GerenciarPlantaTodos(){
 
-  //<td><a onClick={() => {handleOpenModal('Editar'); handleRowSelect(data); }} className='opcaoExtra'>Editar</a></td>
-  //<td><a onClick={() => {handleOpenModal('maisInfo'); handleRowSelect(data); }} className='opcaoExtra'>Mais informações</a></td>
-  
-
   const UrlGetList = "http://192.168.0.24:8080/planta/ListarPlantas"
   const [listAll, setListAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')

@@ -3,6 +3,8 @@ import RelatorioPlanta from './RelatorioPlanta';
 import EditarInfo from './EditarInfo';
 import React, { useState, useEffect } from 'react';
 
+function GerenciarPlantaCrescimento() {
+  
 const UrlGetList = "http://localhost:8080/planta/ListarPlantasCrescimento"
 const [listAll, setListAll] = useState([]);
 const [pesquisaInput, setPesquisaInput] = useState('')
