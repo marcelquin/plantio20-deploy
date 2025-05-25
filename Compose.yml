@@ -19,9 +19,7 @@ services:
     restart: on-failure
    
   frontend:
-    build: ./Frontend/app
+    build: /Frontend/app
     ports:
       - 3000:3000
-    depends_on:
-      - backend
     restart: on-failure
