@@ -1,24 +1,16 @@
-# Estágio de build e produção
-FROM node:18-alpine
-
-# Define o diretório de trabalho
+# Etapa 1: build da aplicação React
+FROM node:18-alpine AS builder
 WORKDIR /app
-
-# Copia os arquivos de package
-COPY package*.json ./
-
-# Instala as dependências
-RUN npm install
-
-# Copia o código fonte
 COPY . .
-
-# Gera o build de produção
+RUN npm install
 RUN npm run build
 
-# Instala um servidor estático simples
-RUN npm install -g serve
+# Etapa 2: servidor Nginx
+FROM nginx:alpine
+COPY --from=builder /app/build /usr/share/nginx/html
 
-EXPOSE 3000
+# Substitui o default.conf (opcional, mas recomendado)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD ["serve", "-s", "build", "-l", "3000"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
