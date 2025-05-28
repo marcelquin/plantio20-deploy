@@ -3,12 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import '../../CSS/BodyStyle.css'
 
 function EditarInfo({data}){
-
-    const UrlPutEdit = "http://192.168.0.24:8080/planta/EditarPlanta"
-    const UrlPutLocalizacao = "http://192.168.0.24:8080/planta/AlterarLocalizacao"
-    const UrlPutCilco = "http://192.168.0.24:8080/planta/AlterarCiclo"
-    const UrlGetList = "http://192.168.0.24:8080/localizacao/ListarLocalizacoesDisponiveis"
-
+    
+    const UrlPutEdit = `${process.env.REACT_APP_BACKEND_URL}/planta/EditarPlanta`
+    const UrlPutLocalizacao = `${process.env.REACT_APP_BACKEND_URL}/planta/AlterarLocalizacao`
+    const UrlPutCilco = `${process.env.REACT_APP_BACKEND_URL}/planta/AlterarCiclo`
+    const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/planta/ListarLocalizacoesDisponiveis` 
+    //const UrlPutEdit = "http://localhost:8080/planta/EditarPlanta"
+    //const UrlPutLocalizacao = "http://localhost:8080/planta/AlterarLocalizacao"
+    //const UrlPutCilco = "http://localhost:8080/planta/AlterarCiclo"
+    //const UrlGetList = "http://localhost8080/localizacao/ListarLocalizacoesDisponiveis"
     const navigate = useNavigate();
 
     const [opcao, setopcao] = useState("info")

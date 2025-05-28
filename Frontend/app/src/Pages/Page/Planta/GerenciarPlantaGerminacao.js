@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 
 function GerenciarPlantaGerminacao(){
 
-  const UrlGetList = "http://192.168.0.24:8080/planta/ListarPlantasGerminacao"
+  const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/planta/ListarPlantasGerminacao`
+  //const UrlGetList = "http://localhost:8080/planta/ListarPlantasGerminacao"
   const [listAll, setListAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
   const [showModal, setShowModal] = useState(false);

@@ -4,8 +4,10 @@ import '../../CSS/BodyStyle.css';
 
 function Edit_AreaPlantio({data}) {
 
-  const UrlPut = "http://192.168.0.24:8080/area/EditarInformacoesArea"
-  const UrlPutAmpliar = "http://192.168.0.24:8080/area/AlterarDimensaoLocalizacoes"
+  const UrlPut = `${process.env.REACT_APP_BACKEND_URL}/area/EditarInformacoesArea` 
+  const UrlPutAmpliar = `${process.env.REACT_APP_BACKEND_URL}/area/AlterarDimensaoLocalizacoes`
+  //const UrlPut = "http://localhost:8080/area/EditarInformacoesArea"
+  //const UrlPutAmpliar = "http://localhost:8080/area/AlterarDimensaoLocalizacoes"
   const navigate = useNavigate();
   const [opcao, setopcao] = useState("info")
 

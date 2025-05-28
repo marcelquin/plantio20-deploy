@@ -16,8 +16,9 @@ function Gerencia_Localizacao() {
       setModalContent(content);
       setShowModal(true);
   };
-
-  const UrlGetList = "http://192.168.0.24:8080/Localizacao/ListarSubareas"
+  
+  const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/localizacao/ListarLocalizacoes`
+  //const UrlGetList = "http://localhost:8080/Localizacao/ListarLocalizacoes"
   const [lista, setLista] = useState([]);
 
   

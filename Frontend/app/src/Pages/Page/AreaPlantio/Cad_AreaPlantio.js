@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { data, useNavigate } from 'react-router-dom';
 
 function Cad_AreaPlantio() {
-  
-  const UrlPost = "http://192.168.0.24:8080/area/NovaArea"
+                  
+  const UrlPost = `${process.env.REACT_APP_BACKEND_URL}/plantio/NovaArea`
+  //const UrlPost = "http://localhost:8080/area/NovaArea"
   const navigate = useNavigate();
 
 
