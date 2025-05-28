@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: seu-registry/frontend:latest
+          image: mquinteiro464/plantio20-frontend:v2
           ports:
             - containerPort: 80
 ---
@@ -73,7 +73,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: seu-registry/backend:latest
+          image: mquinteiro464/plantio20-backend:v1
           ports:
             - containerPort: 8080
 ---
