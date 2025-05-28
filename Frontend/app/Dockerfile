@@ -1,14 +1,14 @@
-# Build stage
-FROM node:18-alpine as build
+# Etapa 1: Build da aplicação React
+FROM node:20 as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY . .
+COPY . ./
 RUN npm run build
 
-# Production stage
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
+# Etapa 2: Servir os arquivos com Nginx
+FROM nginx:latest
+COPY --from=build-stage /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
