@@ -50,7 +50,7 @@ function Cad_Planta() {
           instrucoes: dataPost.instrucoes,
         })
       })
-      .then(() => navigate("/planta")) 
+      .then(() => navigate("/gerenciar")) 
       serdataPost({
         localizacaoId: '',
         nomeCientifico: '',
@@ -69,63 +69,57 @@ function Cad_Planta() {
  
   return (
     <>
-      <div className='BoxHome'>
-        <div className='bodyconteudo'>
-      
-          <div className="boxForm">
-            <form onSubmit={handleClick}>
-                <table>
-                  <tr>
-                    <td>
-                      <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Cientifico</button>
-                        <input type="text" name="nomeCientifico" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Popular</button>
-                        <input type="text" name="nomePopular" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon1">Instruções</button>
-                        <input type="text" name="instrucoes" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                          <select 
-                            class="form-select" 
-                            aria-label="Default select example"
-                            name="localizacaoId"
-                            value={dataPost.localizacaoId || ''}
-                            onChange={handleChanage}
-                          >
-                            <option value="">Localizações disponíveis</option>
-                          {dadosGetLocalizacoes.map((loc, i)=>{return(<>       
-                            <option key={loc.id} value={loc.id}>{loc.referencia}</option>
-                        </>)})}
-                        </select>
-                    </td>
-                  </tr>
-                  <br/>
-                  <tr>  
-                    <td><button type="submit" class="btn btn-success">Salvar</button></td>
-                  </tr>
-                </table>
-              </form>
+        <div className="boxForm">
+          <form onSubmit={handleClick}>
+              <table>
+                <tr>
+                  <td>
+                    <div class="input-group mb-3">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Cientifico</button>
+                      <input type="text" name="nomeCientifico" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="input-group mb-3">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Popular</button>
+                      <input type="text" name="nomePopular" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="input-group mb-3">
+                      <button class="btn btn-outline-secondary" type="button" id="button-addon1">Instruções</button>
+                      <input type="text" name="instrucoes" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                        <select 
+                          class="form-select" 
+                          aria-label="Default select example"
+                          name="localizacaoId"
+                          value={dataPost.localizacaoId || ''}
+                          onChange={handleChanage}
+                        >
+                          <option value="">Localizações disponíveis</option>
+                        {dadosGetLocalizacoes.map((loc, i)=>{return(<>       
+                          <option key={loc.id} value={loc.id}>{loc.referencia}</option>
+                      </>)})}
+                      </select>
+                  </td>
+                </tr>
+                <br/>
+                <tr>  
+                  <td><button type="submit" class="btn btn-success">Salvar</button></td>
+                </tr>
+              </table>
+            </form>
 
-          </div>
         </div>
-      </div>
-
     </>
   );
 }
