@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { data, useNavigate } from 'react-router-dom';
+import '../../CSS/BodyStyle.css'
+
 
 function Cad_AreaPlantio() {
                   
@@ -37,7 +39,7 @@ function Cad_AreaPlantio() {
           numeroLocalizacoes : parseInt(dataPost.numeroLocalizacoes)
         })
       })
-      .then(navigate("/gerenciar")) 
+      .then(navigate("/area")) 
       serdataPost({
         nome: "",
         dimensao: "",
@@ -54,7 +56,8 @@ function Cad_AreaPlantio() {
 
   return (
     <>
-
+    <div className='BoxHome'>
+      <div className='bodyconteudo'>
       <form>
           <table>
             <tr>
@@ -64,16 +67,12 @@ function Cad_AreaPlantio() {
                 <input type="text" name="nome" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
               </div>
               </td>
-            </tr>
-            <tr>
               <td>
               <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">Dimensão</button>
                 <input type="text" name="dimensao" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
               </div>
               </td>
-            </tr>
-            <tr>
             <td>
               <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">GPS</button>
@@ -88,8 +87,6 @@ function Cad_AreaPlantio() {
                 <input type="number" name="numeroPlantios" onChange={handleChanage} class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
               </div>
               </td>
-            </tr>
-            <tr>
               <td>
               <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">Numero de linhas</button>
@@ -111,6 +108,9 @@ function Cad_AreaPlantio() {
             </tr>
           </table>
         </form>
+      </div>
+    </div>
+
     </>
   );
 }
