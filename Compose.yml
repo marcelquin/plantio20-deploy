@@ -2,24 +2,12 @@
 version: "3"
 services:
 
-  database:
-    image: 'postgres:17'
-    environment:
-      - 'POSTGRES_DB=mhqa_plantio'
-      - 'POSTGRES_PASSWORD=hk28gr20p1'
-      - 'POSTGRES_USER=mhqa'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    restart: on-failure
-    networks:
-      - internal
-
   backend:
-    build: ./Backend
+    build: /Backend
     ports:
       - 8080:8080
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/mhqa_plantio
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://192.168.0.24:5432/mhqa_plantio
       - SPRING_DATASOURCE_USERNAME=mhqa
       - SPRING_DATASOURCE_PASSWORD=hk28gr20p1
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
@@ -29,22 +17,9 @@ services:
     depends_on:
       - database
     restart: on-failure
-    networks:
-      - internal
    
   frontend:
-    build: ./Frontend/app
+    build: /Frontend/app
     ports:
       - 80:80
-    depends_on:
-      - backend
     restart: on-failure
-    networks:
-      - internal
-
-volumes:
-  postgres_data:
-
-networks:
-  internal:
-    driver: bridge
