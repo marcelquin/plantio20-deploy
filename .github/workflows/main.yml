@@ -37,3 +37,4 @@ jobs:
           push: true
           tags: |
               ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:v3
+              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:latest
