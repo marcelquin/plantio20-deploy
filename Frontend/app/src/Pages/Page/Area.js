@@ -1,8 +1,7 @@
 import React from 'react';
 import '../CSS/BodyStyle.css';
 import Gerenciar_AreaPlantio from '../Page/AreaPlantio/Gerencia_AreaPlantio'
-import { Link } from 'react-router-dom';
-
+import { Link, Links } from 'react-router-dom';
 
 
 function Area() {

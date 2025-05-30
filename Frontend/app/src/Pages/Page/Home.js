@@ -8,6 +8,7 @@ function Home() {
   const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/planta/ListarPlantas`
   //const UrlGetList = "http://192.168.0.24:8080/planta/ListarPlantas"
 
+
   const [listAll, setlistAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
 

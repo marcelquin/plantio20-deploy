@@ -17,8 +17,8 @@ function Gerencia_AreaPlantio() {
       setShowModal(true);
   };
       
-  //const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/area/ListarAreas` 
-  const UrlGetList = "http://192.168.0.24:8080/area/ListarAreas"
+  const UrlGetList = `${process.env.REACT_APP_BACKEND_URL}/area/ListarAreas` 
+  //const UrlGetList = "http://localhost:8080/area/ListarAreas"
   const [listAll, setlistAll] = useState([]);
   const [pesquisaInput, setPesquisaInput] = useState('')
 
