@@ -5,8 +5,8 @@ import '../../CSS/BodyStyle.css'
 function AdubacaoPlantio({data})
 {
 
-    const UrlPutAdubacao = `${process.env.REACT_APP_BACKEND_URL}/plantio/NovaAdubacao`
-    //const UrlPutAdubacao = "http://192.168.0.24:8080/plantio/NovaAdubacao"
+    //const UrlPutAdubacao = `${process.env.REACT_APP_BACKEND_URL}/plantio/NovaAdubacao`
+    const UrlPutAdubacao = "http://192.168.0.24:8080/plantio/NovaAdubacao"
     const navigate = useNavigate();
 
     const [idPlantio, setIdPlantio] = useState("");
