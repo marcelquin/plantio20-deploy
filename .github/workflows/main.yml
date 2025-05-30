@@ -36,4 +36,4 @@ jobs:
           context: ./Frontend/app
           push: true
           tags: |
-              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:v4
+              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:v3
