@@ -1,14 +1,28 @@
 # Etapa 1: Build da aplicação React
-FROM node:20 as build-stage
+FROM node:20 as builder
+
 WORKDIR /app
+
+# Copiar package.json e install dependencies
 COPY package*.json ./
-RUN npm install
-COPY . ./
+RUN npm ci
+
+# Copiar código fonte e buildar a aplicação
+COPY . .
 RUN npm run build
 
-# Etapa 2: Servir os arquivos com Nginx
-FROM nginx:latest
-COPY --from=build-stage /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# Etapa 2: Servir os arquivos buildados
+FROM node:20-alpine
+
+WORKDIR /app
+
+ENV REACT_APP_BACKEND_URL=http://192.168.0.100
+# Instalar um servidor estático (ex: serve)
+RUN npm install -g serve
+
+# Copiar apenas os arquivos buildados da etapa anterior
+COPY --from=builder /app/build ./build
+
+# Comando para rodar o servidor
+CMD ["serve", "-s", "-l", "80", "build"]
+
