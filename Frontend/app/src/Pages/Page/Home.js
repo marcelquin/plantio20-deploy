@@ -46,7 +46,6 @@ function Home() {
 return (
     <div className='BoxHome'>
         <div className='boxTable'>
-        <h1>{UrlGetList}</h1>
         <div class="input-group mb-3">
           <button class="btn btn-outline-secondary" type="button" id="button-addon1">Nome Popular</button>
           <input type="text" class="form-control" name='pesquisaInput' onChange={handleChange} placeholder="Digite o nome para pesquisa" aria-label="Example text with button addon" aria-describedby="button-addon1"/>
