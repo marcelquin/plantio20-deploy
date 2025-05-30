@@ -50,22 +50,27 @@ function Gerencia_Localizacao() {
 
   return (
     <>
-        <div className="form-check">
-          <input 
-            className="form-check-input" 
-            type="checkbox" 
-            id="flexCheckDefault"
-            checked={checkboxDisponivel === 'disponivel'}
-            value="disponivel"
-            onChange={handleChangeDisponivel}
-          />
-          <label className="form-check-label" htmlFor="flexCheckDefault">
-            Disponivel
-          </label>
+        <div className='BoxHome'>
+            <div className='bodyconteudo'>
+            <div className="form-check">
+                <input 
+                  className="form-check-input" 
+                  type="checkbox" 
+                  id="flexCheckDefault"
+                  checked={checkboxDisponivel === 'disponivel'}
+                  value="disponivel"
+                  onChange={handleChangeDisponivel}
+                />
+                <label className="form-check-label" htmlFor="flexCheckDefault">
+                  Disponivel
+                </label>
+              </div>
+              <br/>
+              {checkboxDisponivel === "Todos" ?(<><GerenciarLocalizacaoTodos/></>) : (<></>)}
+              {checkboxDisponivel === "disponivel" ?(<><GerenciarLocalizacaoDisponiveis/></>) : (<></>)}
+
+            </div>
         </div>
-        <br/>
-        {checkboxDisponivel === "Todos" ?(<><GerenciarLocalizacaoTodos/></>) : (<></>)}
-        {checkboxDisponivel === "disponivel" ?(<><GerenciarLocalizacaoDisponiveis/></>) : (<></>)}
     </>
   );
 }

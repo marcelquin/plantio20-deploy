@@ -1,3 +1,7 @@
+button
+{
+    width: auto;
+}
 
 .boxForm
 {
@@ -18,6 +22,72 @@
     width: 95%;
     height: auto;
     margin: 0 auto;
+}
+
+.boxAdicionarGerenciar .boxSubMenu
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8%;
+}
+
+.BoxHome .topMenu
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.topMenu button
+{
+    margin-left: 10%;
+}
+
+.BoxHome .bodyconteudo
+{
+    width: 90%;
+    height: auto;
+    margin: 5%;
+}
+
+.boxSubMenu .menuArea
+{
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+    color: #27548A;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: start;
+}
+
+.boxSubMenu .menuPlanta
+{
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+    color: #27548A;
+    font-size: 20px;
+    text-align: start;
+    text-transform: uppercase;
+}
+
+.menuArea:hover
+{
+    background-image: url('../Imagens/gerenciaArea.png');
+    text-align: end;
+}
+
+.menuPlanta:hover
+{
+    background-image: url('../Imagens/gerenciaPlantas.png');
+    text-align: end;
 }
 
 .BoxHome .boxopcao
