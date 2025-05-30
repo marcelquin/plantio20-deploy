@@ -4,6 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 import HeaderComponent from './Pages/Components/header'
 import Home from './Pages/Page/Home';
 import Gerenciar from './Pages/Page/Gerenciar';
+import Area from './Pages/Page/Area';
+import Planta from './Pages/Page/Planta';
+import Gerencia_Localizacao from './Pages/Page/Localizacao/Gerencia_Localizacao';
+import Cad_Planta from './Pages/Page/Planta/Cad_Planta';
+import Cad_AreaPlantio from './Pages/Page/AreaPlantio/Cad_AreaPlantio';
 
 function App() {
   return (
