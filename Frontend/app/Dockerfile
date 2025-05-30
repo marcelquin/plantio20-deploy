@@ -16,7 +16,6 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-ENV REACT_APP_BACKEND_URL=http://192.168.0.100
 # Instalar um servidor estático (ex: serve)
 RUN npm install -g serve
 
