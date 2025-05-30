@@ -14,8 +14,13 @@ function App() {
           </div>
           <div className='BoxBody'>
             <Routes>
-              <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
               <Route path="/gerenciar" element={<Gerenciar />} />
+              <Route path="/area" element={<Area />} />
+              <Route path="/localizacao" element={<Gerencia_Localizacao />} />
+              <Route path="/nova_area" element={<Cad_AreaPlantio />} />
+              <Route path="/nova_planta" element={<Cad_Planta />} />
+              <Route path="/planta" element={<Planta />} />
             </Routes>
           </div>
 
