@@ -27,7 +27,11 @@ function Gerencia_Planta() {
 
   return (
     <>
+      <div className='BoxHome'>
+        <div className='bodyconteudo'>
 
+        </div>
+      </div>  
 <div className='BoxHome'>
         <div className='boxopcao'>
           <div className="form-check">
