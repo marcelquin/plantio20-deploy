@@ -1,14 +1,15 @@
-# Etapa 1: Build da aplicação React
-FROM node:20 as build-stage
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . ./
-RUN npm run build
+FROM node:19
 
-# Etapa 2: Servir os arquivos com Nginx
-FROM nginx:latest
-COPY --from=build-stage /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+WORKDIR /frontend
+
+COPY ./package*.json .
+
+RUN npm install
+
+COPY . .
+
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["npm", "start" ]
+
+    
