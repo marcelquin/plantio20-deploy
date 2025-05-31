@@ -27,7 +27,7 @@ jobs:
           context: ./Backend
           push: true
           tags: |
-              ${{ secrets.DOCKERHUB_USER }}/plantio20-backend:v1
+              ${{ secrets.DOCKERHUB_USER }}/plantio20-backend:v2
               ${{ secrets.DOCKERHUB_USER }}/plantio20-backend:latest
 
       - name: Build and push
@@ -36,5 +36,4 @@ jobs:
           context: ./Frontend/app
           push: true
           tags: |
-              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:v1
-              ${{ secrets.DOCKERHUB_USER }}/plantio20-frontend:latest
+              ${{ secrets.DOCKERHUB_USER }}/mhqaplantio20-frontend:v1
